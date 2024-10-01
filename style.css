@@ -19,6 +19,26 @@ body {
   transform-style: preserve-3d;
 }
 
+/* Gift Message Styling */
+#gift-message {
+  font-family: 'Brush Script MT', cursive;
+  font-size: 3em;
+  color: pink;
+  text-align: center;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
+  transition: opacity 5s ease-in-out;
+  z-index: 2;
+}
+
+/* Hide the gift message after fading */
+#gift-message.fade-out {
+  opacity: 0;
+}
+
 /* Containers for drag and spin */
 #drag-container, #spin-container {
   position: relative;
