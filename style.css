@@ -1,0 +1,66 @@
+/* Reset margins and padding */
+* {
+  margin: 0;
+  padding: 0;
+}
+
+/* Full height and no touch action for body */
+html, body {
+  height: 100%;
+  touch-action: none;
+}
+
+/* Main body styling */
+body {
+  overflow: hidden;
+  display: flex;
+  background: #111;
+  perspective: 1000px;
+  transform-style: preserve-3d;
+}
+
+/* Containers for drag and spin */
+#drag-container, #spin-container {
+  position: relative;
+  display: flex;
+  margin: auto;
+  transform-style: preserve-3d;
+  transform: rotateX(-10deg);
+}
+
+/* Styling for images and videos */
+#drag-container img, #drag-container video {
+  transform-style: preserve-3d;
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0 0 8px #fff;
+  box-reflect: below 10px linear-gradient(transparent, transparent, #0005);
+}
+
+#drag-container img:hover, #drag-container video:hover {
+  box-shadow: 0 0 15px #fffd;
+  box-reflect: below 10px linear-gradient(transparent, transparent, #0007);
+}
+
+/* Ground styling */
+#ground {
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotateX(90deg);
+  background: radial-gradient(circle, #9993, transparent);
+}
+
+/* Animation for spin */
+@keyframes spin {
+  from { transform: rotateY(0deg); }
+  to { transform: rotateY(360deg); }
+}
+
+@keyframes spinRevert {
+  from { transform: rotateY(360deg); }
+  to { transform: rotateY(0deg); }
+}
