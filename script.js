@@ -97,3 +97,13 @@ document.onmousewheel = function(e) {
   radius += d;
   init(1);
 };
+
+// Fade out the gift message and show carousel after 5 seconds
+setTimeout(function() {
+  var giftMessage = document.getElementById('gift-message');
+  giftMessage.classList.add('fade-out');
+  setTimeout(function() {
+    giftMessage.style.display = 'none';
+    document.getElementById('drag-container').style.display = 'flex';
+  }, 1000); // 1 second to ensure smooth fade transition
+}, 5000); // Wait for 5 seconds before fading out the gift message
