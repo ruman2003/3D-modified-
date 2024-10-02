@@ -1,6 +1,6 @@
 var radius = 240; // radius of carousel
 var autoRotate = true; // enable auto-rotation
-var rotateSpeed = -60; // speed of rotation (negative for reverse)
+var rotateSpeed = 60; // speed of rotation (negative for reverse)
 var imgWidth = 120; // width of images (in px)
 var imgHeight = 170; // height of images (in px)
 
@@ -107,3 +107,13 @@ setTimeout(function() {
     document.getElementById('drag-container').style.display = 'flex';
   }, 1000); // 1 second to ensure smooth fade transition
 }, 5000); // Wait for 5 seconds before fading out the gift message
+
+// Background Music Autoplay Fix
+window.addEventListener('load', function () {
+  // Play music on user interaction
+  var bgMusic = document.getElementById('bg-music');
+  document.body.addEventListener('click', function () {
+    bgMusic.muted = false; // Unmute the audio after a click
+    bgMusic.play(); // Ensure it starts playing
+  });
+});
