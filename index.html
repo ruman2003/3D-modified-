@@ -23,9 +23,6 @@
     <img src="5.jpg" alt="Image 5">
     <img src="6.jpg" alt="Image 6">
     <img src="7.jpg" alt="Image 7">
-    <video controls autoplay="autoplay" loop>
-      <source src="29.mp4" type="video/mp4">
-    </video>
     <p>Follow <mark>Rudra's_Creation</mark></p>
   </div>
   <div id="ground"></div>
@@ -33,11 +30,20 @@
 
 <!-- Background Music -->
 <div id="music-container">
-  <audio src="background.mp3" autoplay loop>
+  <audio id="bg-music" src="background.mp3" autoplay loop muted>
     <p>If you are reading this, it is because your browser does not support the audio element.</p>
   </audio>
 </div>
 
 <script src="./script.js"></script>
+<script>
+  window.addEventListener('load', function () {
+    var bgMusic = document.getElementById('bg-music');
+    document.body.addEventListener('click', function () {
+      bgMusic.muted = false; // Unmute audio on click
+      bgMusic.play();
+    });
+  });
+</script>
 </body>
 </html>
