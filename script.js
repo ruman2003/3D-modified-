@@ -1,6 +1,6 @@
 var radius = 240; // radius of carousel
 var autoRotate = true; // enable auto-rotation
-var rotateSpeed = 80; // speed of rotation (negative for reverse)
+var rotateSpeed = 20; // speed of rotation (negative for reverse)
 var imgWidth = 120; // width of images (in px)
 var imgHeight = 170; // height of images (in px)
 
